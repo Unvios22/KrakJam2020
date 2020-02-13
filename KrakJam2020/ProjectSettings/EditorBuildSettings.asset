@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Prototype/UI/MainMenu.unity
+    path: Assets/_Scenes/MenuScenes/MainMenu.unity
     guid: 44cc68394a8dde446a72cb895134641c
   - enabled: 1
-    path: Assets/_Scenes/Prototype/UI/HighScore.unity
+    path: Assets/_Scenes/MenuScenes/HighScore.unity
     guid: 69b285ed1ed1092489e66f9c4af65fac
   - enabled: 1
-    path: Assets/_Scenes/Prototype/UI/EndScene.unity
+    path: Assets/_Scenes/MenuScenes/EndScene.unity
     guid: 8c0b9d5c2e7b81a4386c6e27e15333f7
   - enabled: 1
-    path: Assets/_Scenes/Prototype/PrototypeToRelease1.unity
+    path: Assets/_Scenes/MainGameScene.unity
     guid: 1c9733b172071bc4ba790bc0f276e6ba
   m_configObjects: {}
