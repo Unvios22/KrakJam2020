@@ -38,5 +38,6 @@ public class TruckColorPicker : MonoBehaviour {
 
     public void ChangeColour(){
         ChangeTruckColour();
+        EventManager.OnTruckColorChangedEvent();
     }
 }
