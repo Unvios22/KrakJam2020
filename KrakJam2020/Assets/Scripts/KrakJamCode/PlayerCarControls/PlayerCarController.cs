@@ -45,10 +45,12 @@ namespace PlayerCarControls{
 		void ManagePlayerTurningEvents() {
 			if (_playerTurningEventInvoked && Mathf.Abs(_playerRotationAngle) < playerTurningEventInvokeAngleThreshold) {
 				playerTurningEffectsStoppedEvent.Invoke();
+				EventManager.OnCarStoppedDriftingEvent();
 				_playerTurningEventInvoked = false;
 			}
 			else if(!_playerTurningEventInvoked && Mathf.Abs(_playerRotationAngle) > playerTurningEventInvokeAngleThreshold) {
 				playerTurningEffectsStartedEvent.Invoke();
+				EventManager.OnCarStartedDriftingEvent();
 				_playerTurningEventInvoked = true;
 			}
 		}

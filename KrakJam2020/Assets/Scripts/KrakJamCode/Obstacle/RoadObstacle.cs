@@ -18,12 +18,6 @@ namespace Obstacle{
 		public HealthPointsSystem healthPointsSystem;
 		public FloatingScoreSpawner floatingScoreSpawner;
 
-		AudioSource _audioSource;
-
-		void Start(){
-			_audioSource = GetComponent<AudioSource>();
-		}
-
 		void OnTriggerEnter(Collider other){
 			if(!other.gameObject.CompareTag(Tags.PLAYER)){
 				return;
@@ -35,7 +29,6 @@ namespace Obstacle{
 			highScore.AddScore(score);
 			healthPointsSystem.DecreaseHealth();
 			floatingScoreSpawner.SpawnFloatingPointsAmount(score,transform.position);
-			_audioSource.Play();
 
 			if(particleSystem != null){
 				var localParticleSystem = Instantiate(particleSystem, transform);
@@ -47,6 +40,23 @@ namespace Obstacle{
 		IEnumerator WaitForParticleSystemStop(ParticleSystem localParticleSystem){
 			yield return new WaitForSeconds(particleEffectDuration);
 			localParticleSystem.Stop();
+		}
+
+		private void InvokeObstacleCollidedEvent() {
+			switch (gameObject.tag) {
+				case Tags.CAN_BE_SPLASHED_BY_CONCRETE:
+					EventManager.OnUnfilledHoleCollidedEvent();
+					break;
+				case Tags.ROADBLOCK:
+					EventManager.OnObstacleCollidedEvent();
+					break;
+				case Tags.PEDESTRIAN:
+					EventManager.OnPedestrianKilledEvent();
+					break;
+				case Tags.CAR:
+					EventManager.OnCarCollidedEvent();
+					break;
+			}
 		}
 	}
 }

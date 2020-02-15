@@ -30,6 +30,7 @@ namespace concreteMechanic{
 			_roadObstacle.enabled = false;
 			highScore.AddScore(scoreGainedBySplashing);
 			_roadObstacle.floatingScoreSpawner.SpawnFloatingPointsAmount(scoreGainedBySplashing, transform.position);
+			EventManager.OnHoleFilledEvent();
 		}
 	}
 }

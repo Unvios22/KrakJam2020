@@ -9,6 +9,10 @@ TagManager:
   - HighScore
   - CameraToShake
   - TruckColorChanger
+  - UnfilledHole
+  - Car
+  - RoadBlock
+  - Pedestrian
   layers:
   - Default
   - TransparentFX

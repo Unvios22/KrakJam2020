@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 557790631859395127}
   m_Layer: 0
   m_Name: ObstacleRoadBlock
-  m_TagString: Untagged
+  m_TagString: RoadBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
