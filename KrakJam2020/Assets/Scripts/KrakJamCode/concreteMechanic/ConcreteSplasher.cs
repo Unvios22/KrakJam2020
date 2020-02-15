@@ -12,13 +12,7 @@ namespace concreteMechanic{
 		[SerializeField] SplashColliderCreator splashColliderCreator;
 		[SerializeField] int splattingTime;
 		[SerializeField] ParticleSystem particleSystem;
-
-		AudioSource _audioSource;
-
-		void Start(){
-			_audioSource = GetComponent<AudioSource>();
-		}
-
+		
 		void Update(){
 			if(Input.GetKey(KeyCode.Space)){
 				SplashConcrete();
@@ -34,14 +28,14 @@ namespace concreteMechanic{
 		void InitiateSplash(){
 			splashColliderCreator.gameObject.SetActive(true);
 			particleSystem.Play();
-			_audioSource.Play();
+			EventManager.OnConcreteStartedSplashingEvent();
 		}
 
 		IEnumerator DisableSplashAfterSeconds(){
 			yield return new WaitForSeconds(splattingTime);
 			splashColliderCreator.gameObject.SetActive(false);
 			particleSystem.Stop();
-			_audioSource.Stop();
+			EventManager.OnConcreteStoppedSplashingEvent();
 		}
 	}
 }
