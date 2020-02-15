@@ -34,6 +34,8 @@ namespace Obstacle{
 				localParticleSystem.Play();
 				StartCoroutine(WaitForParticleSystemStop(localParticleSystem));
 			}
+
+			InvokeObstacleCollidedEvent();
 		}
 
 		IEnumerator WaitForParticleSystemStop(ParticleSystem localParticleSystem){
