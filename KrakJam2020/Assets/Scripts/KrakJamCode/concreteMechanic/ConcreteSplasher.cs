@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace concreteMechanic{
 	
-	[RequireComponent(typeof(AudioSource))]
 	public class ConcreteSplasher : MonoBehaviour{
 
 		[SerializeField] SplashColliderCreator splashColliderCreator;

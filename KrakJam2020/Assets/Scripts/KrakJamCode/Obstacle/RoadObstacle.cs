@@ -7,8 +7,7 @@ using highScore;
 using UnityEngine;
 
 namespace Obstacle{
-	[RequireComponent(typeof(Rigidbody), typeof(BoxCollider), 
-		typeof(AudioSource))]
+	[RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 	public class RoadObstacle : MonoBehaviour {
 		[SerializeField] int score;
 		[SerializeField] float particleEffectDuration;
