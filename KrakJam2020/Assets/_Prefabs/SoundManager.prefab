@@ -558,7 +558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicArray: []
   pedestrianCollisionSounds: []
-  truckSpeedUpSounds: []
   truckDriftingSounds: []
   concreteSplashingSound: {fileID: 0}
   holeFilledSound: {fileID: 0}
@@ -566,6 +565,7 @@ MonoBehaviour:
   obstacleCollisionSound: {fileID: 0}
   carCollisionSound: {fileID: 0}
   truckColorChangedSound: {fileID: 0}
+  UiButtonHoverSound: {fileID: 0}
   musicSource: {fileID: 1802797257}
   concreteSplashingSource: {fileID: 3263244311834467814}
   sfxSource: {fileID: 571008885}

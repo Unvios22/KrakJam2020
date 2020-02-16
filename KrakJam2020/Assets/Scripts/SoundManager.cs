@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioClip[] musicArray;
     [SerializeField] private AudioClip[] pedestrianCollisionSounds;
-    [SerializeField] private AudioClip[] truckSpeedUpSounds;
     [SerializeField] private AudioClip[] truckDriftingSounds;
 
     [SerializeField] private AudioClip concreteSplashingSound;
@@ -37,7 +36,7 @@ public class SoundManager : MonoBehaviour {
         EventManager.PedestrianKilledEvent += PlayPedestrianCollisionSound;
         EventManager.ConcreteStartedSplashingEvent += StartPlayingConcreteSplashingSound;
         EventManager.ConcreteStoppedSplashingEvent += StopPlayingConcreteSplashingSound;
-        EventManager.TruckColorChangedEvent += PlayeTruckColorChangedSound;
+        EventManager.TruckColorChangedEvent += PlayerTruckColorChangedSound;
         EventManager.UiButtonHoverEvent += PlayUiButtonHoverSound;
     }
 
@@ -82,7 +81,7 @@ public class SoundManager : MonoBehaviour {
         driftingSoundSource.PlayOneShot(clipToPlay);
     }
 
-    private void PlayeTruckColorChangedSound() {
+    private void PlayerTruckColorChangedSound() {
         UISoundsSource.PlayOneShot(truckColorChangedSound);
     }
 
