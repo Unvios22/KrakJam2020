@@ -9,6 +9,7 @@ public class GameEnder : MonoBehaviour{
     void Start() {
         _remainingGameTime = gameLengthInSeconds;
         StartCoroutine(CoundownRemainingGameTime());
+        EventManager.OnGameStartedEvent();
     }
 
     IEnumerator CoundownRemainingGameTime() {
