@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class EnlargingButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
+public class EnlargingButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler{
 	
 	[SerializeField] private Vector3 _enlargedScale = new Vector3(1.5f, 1.5f, 1.5f);
 
@@ -18,5 +18,9 @@ public class EnlargingButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
 	public void OnPointerExit(PointerEventData eventData){
 		transform.localScale = _cachedScale;
+	}
+
+	public void OnPointerClick(PointerEventData eventData) {
+		EventManager.OnUiButtonClickEvent();
 	}
 }
