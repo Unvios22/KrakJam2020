@@ -18,8 +18,8 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioClip UiButtonClickSound;
 
     [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource concreteSplashingSource;
-    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource concreteSoundsSource;
+    [SerializeField] private AudioSource collisionSoundsSource;
     [SerializeField] private AudioSource driftingSoundSource;
     [SerializeField] private AudioSource UISoundsSource;
 
@@ -49,33 +49,33 @@ public class SoundManager : MonoBehaviour {
     }
 
     private void StartPlayingConcreteSplashingSound() {
-        concreteSplashingSource.clip = concreteSplashingSound;
-        concreteSplashingSource.Play();
+        concreteSoundsSource.clip = concreteSplashingSound;
+        concreteSoundsSource.Play();
     }
 
     private void StopPlayingConcreteSplashingSound() {
-        concreteSplashingSource.Stop();
+        concreteSoundsSource.Stop();
     }
 
     private void PlayHoleFilledSound() {
-        sfxSource.PlayOneShot(holeFilledSound);
+        collisionSoundsSource.PlayOneShot(holeFilledSound);
     }
 
     private void PlayUnfilledHoleCollisionSound() {
-     sfxSource.PlayOneShot(unfilledHoleCollisionSound);   
+     collisionSoundsSource.PlayOneShot(unfilledHoleCollisionSound);   
     }
 
     private void PlayObstacleCollisionSound() {
-        sfxSource.PlayOneShot(obstacleCollisionSound);
+        collisionSoundsSource.PlayOneShot(obstacleCollisionSound);
     }
 
     private void PlayCarCollisionSound() {
-        sfxSource.PlayOneShot(carCollisionSound);
+        collisionSoundsSource.PlayOneShot(carCollisionSound);
     }
 
     private void PlayPedestrianCollisionSound() {
         var clipToPlay = GetRandomClipFromArray(pedestrianCollisionSounds);
-        sfxSource.PlayOneShot(clipToPlay);
+        collisionSoundsSource.PlayOneShot(clipToPlay);
     }
 
     private void PlayTruckDriftingSound() {

@@ -40,7 +40,8 @@ AudioSource:
   m_GameObject: {fileID: 246040563}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8890178374923825913, guid: 401a2c125c294d547b0c7f9cd74a70a8,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -138,7 +139,7 @@ GameObject:
   - component: {fileID: 571008884}
   - component: {fileID: 571008885}
   m_Layer: 0
-  m_Name: SfxSource
+  m_Name: CollisionsSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +168,8 @@ AudioSource:
   m_GameObject: {fileID: 571008883}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5943544407283034632, guid: 972a5d611941e45409f5ac4aebe9152e,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -294,7 +296,8 @@ AudioSource:
   m_GameObject: {fileID: 1052536100}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3323083242905080404, guid: 972a5d611941e45409f5ac4aebe9152e,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -421,7 +424,8 @@ AudioSource:
   m_GameObject: {fileID: 1802797255}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3567743269846276962, guid: 401a2c125c294d547b0c7f9cd74a70a8,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -566,9 +570,10 @@ MonoBehaviour:
   carCollisionSound: {fileID: 0}
   truckColorChangedSound: {fileID: 0}
   UiButtonHoverSound: {fileID: 0}
+  UiButtonClickSound: {fileID: 0}
   musicSource: {fileID: 1802797257}
-  concreteSplashingSource: {fileID: 3263244311834467814}
-  sfxSource: {fileID: 571008885}
+  concreteSoundsSource: {fileID: 3263244311834467814}
+  collisionSoundsSource: {fileID: 571008885}
   driftingSoundSource: {fileID: 1052536102}
   UISoundsSource: {fileID: 246040565}
 --- !u!1 &919635903030370486
@@ -582,7 +587,7 @@ GameObject:
   - component: {fileID: 3313725341779947385}
   - component: {fileID: 3263244311834467814}
   m_Layer: 0
-  m_Name: ConcreteSplashingSource
+  m_Name: ConcreteSoundsSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +616,8 @@ AudioSource:
   m_GameObject: {fileID: 919635903030370486}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5479379063503872003, guid: 972a5d611941e45409f5ac4aebe9152e,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
