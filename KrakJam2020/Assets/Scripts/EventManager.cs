@@ -12,6 +12,7 @@ public static class EventManager {
 	public static event Action CarStartedDriftingEvent;
 	public static event Action CarStoppedDriftingEvent;
 	public static event Action TruckColorChangedEvent;
+	public static event Action UiButtonHoverEvent; 
 
 	public static void OnGameStartedEvent() {
 		GameStartedEvent?.Invoke();
@@ -55,5 +56,9 @@ public static class EventManager {
 
 	public static void OnTruckColorChangedEvent() {
 		TruckColorChangedEvent?.Invoke();
+	}
+
+	public static void OnUiButtonHoverEvent() {
+		UiButtonHoverEvent?.Invoke();
 	}
 }

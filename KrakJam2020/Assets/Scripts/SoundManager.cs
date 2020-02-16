@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioClip obstacleCollisionSound;
     [SerializeField] private AudioClip carCollisionSound;
     [SerializeField] private AudioClip truckColorChangedSound;
+    [SerializeField] private AudioClip UiButtonHoverSound;
 
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource concreteSplashingSource;
@@ -37,6 +38,7 @@ public class SoundManager : MonoBehaviour {
         EventManager.ConcreteStartedSplashingEvent += StartPlayingConcreteSplashingSound;
         EventManager.ConcreteStoppedSplashingEvent += StopPlayingConcreteSplashingSound;
         EventManager.TruckColorChangedEvent += PlayeTruckColorChangedSound;
+        EventManager.UiButtonHoverEvent += PlayUiButtonHoverSound;
     }
 
     private void PlayMusic() {
@@ -82,6 +84,10 @@ public class SoundManager : MonoBehaviour {
 
     private void PlayeTruckColorChangedSound() {
         UISoundsSource.PlayOneShot(truckColorChangedSound);
+    }
+
+    private void PlayUiButtonHoverSound() {
+        UISoundsSource.PlayOneShot(UiButtonHoverSound);
     }
 
     private AudioClip GetRandomClipFromArray(AudioClip[] clipArray) {

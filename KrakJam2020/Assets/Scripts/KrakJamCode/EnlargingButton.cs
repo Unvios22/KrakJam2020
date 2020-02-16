@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class EnlargingButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
@@ -15,6 +13,7 @@ public class EnlargingButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
 	public void OnPointerEnter(PointerEventData eventData){
 		transform.localScale = _enlargedScale;
+		EventManager.OnUiButtonHoverEvent();
 	}
 
 	public void OnPointerExit(PointerEventData eventData){
