@@ -698,7 +698,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b87190ada5b50647959b7716aca7573, type: 3}
   - {fileID: 8300000, guid: f9520ffa32b5a4541b93217d3d051619, type: 3}
   - {fileID: 8300000, guid: 2c60de00550b5ad44ac5f098203d8deb, type: 3}
-  truckDriftingSounds: []
+  truckDriftingSounds:
+  - {fileID: 8300000, guid: 9b148e9d42675b641964d5bb897e7a75, type: 3}
   concreteSplashingSound: {fileID: 8300000, guid: 5e45be6f8de1ec74f9aa68821b0798b8,
     type: 3}
   holeFilledSound: {fileID: 8300000, guid: 6e58fd43c916fd248950d3ab6169039c, type: 3}
@@ -721,6 +722,8 @@ MonoBehaviour:
   PausedGameSnapshot: {fileID: -3630000930535150476, guid: 401a2c125c294d547b0c7f9cd74a70a8,
     type: 2}
   SnapshotTransitionTime: 0.3
+  minDriftingSoundPitch: 0.6
+  maxDriftingSoundPitch: 1.2
 --- !u!1 &919635903030370486
 GameObject:
   m_ObjectHideFlags: 0

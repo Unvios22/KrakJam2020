@@ -24,8 +24,8 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 94710197f96ccb24e8bc99b4103ea33b
   m_FloatValues:
-    7e8a47111f598b44088742550110f3af: 0.025578514
-    dd2b7d82fa61a8b40bc0f510abe7c603: -15.421324
+    7e8a47111f598b44088742550110f3af: 1.6660378
+    dd2b7d82fa61a8b40bc0f510abe7c603: -17.938726
     691946a2f7e58f944b1617fc797d0279: -80
   m_TransitionOverrides: {}
 --- !u!243 &-3567743269846276962
@@ -151,7 +151,9 @@ AudioMixerSnapshotController:
   m_Name: GameSnapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 9b89d103bf0a4c24581614699f0f950d
-  m_FloatValues: {}
+  m_FloatValues:
+    7e8a47111f598b44088742550110f3af: 1.7477665
+    dd2b7d82fa61a8b40bc0f510abe7c603: -5.3230715
   m_TransitionOverrides: {}
 --- !u!244 &2155905718987502598
 AudioMixerEffectController:

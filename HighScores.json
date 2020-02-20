@@ -1,23 +1,15 @@
 {
     "$id": 0,
     "$type": "0|System.Collections.Generic.List`1[[highScore.HighScoreEntry, Assembly-CSharp]], mscorlib",
-    "$rlength": 2,
+    "$rlength": 1,
     "$rcontent": [
         {
             "$id": 1,
             "$type": "1|highScore.HighScoreEntry, Assembly-CSharp",
-            "playerName": "Axandar",
-            "score": 315,
-            "millisecondsOnPlayStart": 1580649965158,
-            "millisecondsOnPlayEnd": 1580650120787
-        },
-        {
-            "$id": 2,
-            "$type": 1,
-            "playerName": "Test",
-            "score": -60,
-            "millisecondsOnPlayStart": 1580650874337,
-            "millisecondsOnPlayEnd": 1580650888287
+            "playerName": "PlayerName",
+            "score": 1000,
+            "millisecondsOnPlayStart": 987654321,
+            "millisecondsOnPlayEnd": 1987654321
         }
     ]
 }

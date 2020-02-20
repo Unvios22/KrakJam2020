@@ -1009,11 +1009,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 891994327184846191, guid: e5e38feea7e924347a93d70897547195,
-        type: 3}
-      propertyPath: unfilledHoleCollisionSound
-      value: 
-      objectReference: {fileID: 8300000, guid: d90268da8f6fff34eb04e55aa9a5761b, type: 3}
     - target: {fileID: 891994327184846192, guid: e5e38feea7e924347a93d70897547195,
         type: 3}
       propertyPath: m_Name

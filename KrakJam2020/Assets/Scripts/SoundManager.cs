@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class SoundManager : MonoBehaviour {
+    [BoxGroup("AudioClip arrays")]
     [SerializeField] private AudioClip[] musicArray;
     [SerializeField] private AudioClip[] pedestrianCollisionSounds;
-    [SerializeField] private AudioClip[] truckDriftingSounds;
+    [SerializeField] private AudioClip[] truckDriftingSounds;    
 
+    [BoxGroup("AudioClips")]
     [SerializeField] private AudioClip concreteSplashingSound;
     [SerializeField] private AudioClip holeFilledSound;
     [SerializeField] private AudioClip unfilledHoleCollisionSound;
@@ -17,7 +20,8 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioClip truckColorChangedSound;
     [SerializeField] private AudioClip UiButtonHoverSound;
     [SerializeField] private AudioClip UiButtonClickSound;
-
+    
+    [BoxGroup("AudioSources")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource concreteSoundsSource;
     [SerializeField] private AudioSource CarAndObstacleCollisionsSource;
@@ -25,9 +29,14 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioSource driftingSoundSource;
     [SerializeField] private AudioSource UISoundsSource;
 
+    [BoxGroup("Snapshots")]
     [SerializeField] private AudioMixerSnapshot NormalGameSnapshot;
     [SerializeField] private AudioMixerSnapshot PausedGameSnapshot;
     [SerializeField] private float SnapshotTransitionTime;
+
+    [BoxGroup("Variable pitch")]
+    [SerializeField] private float minDriftingSoundPitch;
+    [SerializeField] private float maxDriftingSoundPitch;
 
     private Coroutine _playMusicCoroutine;
 
@@ -111,6 +120,8 @@ public class SoundManager : MonoBehaviour {
 
     private void PlayTruckDriftingSound() {
         var clipToPlay = GetRandomClipFromArray(truckDriftingSounds);
+        var pitch = Random.Range(minDriftingSoundPitch, maxDriftingSoundPitch);
+        driftingSoundSource.pitch = pitch;
         driftingSoundSource.PlayOneShot(clipToPlay);
     }
 
