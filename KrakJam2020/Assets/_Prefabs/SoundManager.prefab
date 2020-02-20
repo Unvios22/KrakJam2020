@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 571008884}
   - component: {fileID: 571008885}
   m_Layer: 0
-  m_Name: CollisionsSource
+  m_Name: CarAndObstacleCollisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,10 +168,138 @@ AudioSource:
   m_GameObject: {fileID: 571008883}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -5943544407283034632, guid: 972a5d611941e45409f5ac4aebe9152e,
+  OutputAudioMixerGroup: {fileID: -4580396701023047503, guid: ad0d4899c8b4fa847977817f538cbea8,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1039764864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039764865}
+  - component: {fileID: 1039764866}
+  m_Layer: 0
+  m_Name: PedestrianSoundsSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1039764865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039764864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 891994327184846190}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1039764866
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039764864}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4128236965661654525, guid: ad0d4899c8b4fa847977817f538cbea8,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -545,6 +673,7 @@ Transform:
   - {fileID: 571008884}
   - {fileID: 3313725341779947385}
   - {fileID: 246040564}
+  - {fileID: 1039764865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -560,22 +689,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2bc3247bc668844ab0da478fd94a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicArray: []
-  pedestrianCollisionSounds: []
+  musicArray:
+  - {fileID: 8300000, guid: 67939cff63a2b0c48acdcb32b07526a4, type: 3}
+  - {fileID: 8300000, guid: 3e6cfeee01305784880b5ea9a0f4ddd4, type: 3}
+  - {fileID: 8300000, guid: eb5d1c71705138d4c9402206e7e64e53, type: 3}
+  pedestrianCollisionSounds:
+  - {fileID: 8300000, guid: 41d4eb55d941484499ad072f82ac8ea7, type: 3}
+  - {fileID: 8300000, guid: 1b87190ada5b50647959b7716aca7573, type: 3}
+  - {fileID: 8300000, guid: f9520ffa32b5a4541b93217d3d051619, type: 3}
+  - {fileID: 8300000, guid: 2c60de00550b5ad44ac5f098203d8deb, type: 3}
   truckDriftingSounds: []
-  concreteSplashingSound: {fileID: 0}
-  holeFilledSound: {fileID: 0}
+  concreteSplashingSound: {fileID: 8300000, guid: 5e45be6f8de1ec74f9aa68821b0798b8,
+    type: 3}
+  holeFilledSound: {fileID: 8300000, guid: 6e58fd43c916fd248950d3ab6169039c, type: 3}
   unfilledHoleCollisionSound: {fileID: 0}
-  obstacleCollisionSound: {fileID: 0}
-  carCollisionSound: {fileID: 0}
+  obstacleCollisionSound: {fileID: 8300000, guid: d90268da8f6fff34eb04e55aa9a5761b,
+    type: 3}
+  carCollisionSound: {fileID: 8300000, guid: 7904fc174a1a628449b89659fec7fb96, type: 3}
   truckColorChangedSound: {fileID: 0}
   UiButtonHoverSound: {fileID: 0}
   UiButtonClickSound: {fileID: 0}
   musicSource: {fileID: 1802797257}
   concreteSoundsSource: {fileID: 3263244311834467814}
-  collisionSoundsSource: {fileID: 571008885}
+  CarAndObstacleCollisionsSource: {fileID: 571008885}
+  PedestrianCollisionsSource: {fileID: 1039764866}
   driftingSoundSource: {fileID: 1052536102}
   UISoundsSource: {fileID: 246040565}
+  NormalGameSnapshot: {fileID: 24500006, guid: 401a2c125c294d547b0c7f9cd74a70a8, type: 2}
+  PausedGameSnapshot: {fileID: -3630000930535150476, guid: 401a2c125c294d547b0c7f9cd74a70a8,
+    type: 2}
+  SnapshotTransitionTime: 0.3
 --- !u!1 &919635903030370486
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StopScreen : MonoBehaviour{
 
@@ -21,12 +18,14 @@ public class StopScreen : MonoBehaviour{
 		Time.timeScale = 0;
 		pauseGameCanvas.SetActive(true);
 		_isPaused = true;
+		EventManager.OnGamePausedEvent();
 	}
 
 	public void UnPauseGame(){
 		Time.timeScale = 1;
 		pauseGameCanvas.SetActive(false);
 		_isPaused = false;
+		EventManager.OnGameUnpausedEvent();
 	}
 
 	public void ExitToMenu(){

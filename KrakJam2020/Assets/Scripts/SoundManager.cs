@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class SoundManager : MonoBehaviour {
@@ -19,9 +20,16 @@ public class SoundManager : MonoBehaviour {
 
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource concreteSoundsSource;
-    [SerializeField] private AudioSource collisionSoundsSource;
+    [SerializeField] private AudioSource CarAndObstacleCollisionsSource;
+    [SerializeField] private AudioSource PedestrianCollisionsSource;
     [SerializeField] private AudioSource driftingSoundSource;
     [SerializeField] private AudioSource UISoundsSource;
+
+    [SerializeField] private AudioMixerSnapshot NormalGameSnapshot;
+    [SerializeField] private AudioMixerSnapshot PausedGameSnapshot;
+    [SerializeField] private float SnapshotTransitionTime;
+
+    private Coroutine _playMusicCoroutine;
 
     private void Start() {
         SubscribeToEvents();
@@ -40,12 +48,26 @@ public class SoundManager : MonoBehaviour {
         EventManager.TruckColorChangedEvent += PlayerTruckColorChangedSound;
         EventManager.UiButtonHoverEvent += PlayUiButtonHoverSound;
         EventManager.UiButtonClickEvent += PlayUiButtonClickSound;
+        EventManager.GamePausedEvent += GamePaused;
+        EventManager.GameUnpausedEvent += GameUnpaused;
     }
 
     private void PlayMusic() {
-        var musicToPlay = GetRandomClipFromArray(musicArray);
-        musicSource.clip = musicToPlay;
-        musicSource.Play();
+        _playMusicCoroutine = StartCoroutine(PlayMusicCoroutine());
+    }
+
+    private void StopPlayingMusic() {
+        StopCoroutine(_playMusicCoroutine);
+    }
+
+    private IEnumerator PlayMusicCoroutine() {
+        for (;;) {
+            var musicToPlay = GetRandomClipFromArray(musicArray);
+            var clipLength = musicToPlay.length;
+            musicSource.clip = musicToPlay;
+            musicSource.Play();
+            yield return new WaitForSeconds(clipLength);
+        }
     }
 
     private void StartPlayingConcreteSplashingSound() {
@@ -58,24 +80,24 @@ public class SoundManager : MonoBehaviour {
     }
 
     private void PlayHoleFilledSound() {
-        collisionSoundsSource.PlayOneShot(holeFilledSound);
+        concreteSoundsSource.PlayOneShot(holeFilledSound);
     }
 
     private void PlayUnfilledHoleCollisionSound() {
-     collisionSoundsSource.PlayOneShot(unfilledHoleCollisionSound);   
+     CarAndObstacleCollisionsSource.PlayOneShot(unfilledHoleCollisionSound);   
     }
 
     private void PlayObstacleCollisionSound() {
-        collisionSoundsSource.PlayOneShot(obstacleCollisionSound);
+        CarAndObstacleCollisionsSource.PlayOneShot(obstacleCollisionSound);
     }
 
     private void PlayCarCollisionSound() {
-        collisionSoundsSource.PlayOneShot(carCollisionSound);
+        CarAndObstacleCollisionsSource.PlayOneShot(carCollisionSound);
     }
 
     private void PlayPedestrianCollisionSound() {
         var clipToPlay = GetRandomClipFromArray(pedestrianCollisionSounds);
-        collisionSoundsSource.PlayOneShot(clipToPlay);
+        PedestrianCollisionsSource.PlayOneShot(clipToPlay);
     }
 
     private void PlayTruckDriftingSound() {
@@ -93,6 +115,14 @@ public class SoundManager : MonoBehaviour {
 
     private void PlayUiButtonClickSound() {
         UISoundsSource.PlayOneShot(UiButtonClickSound);
+    }
+
+    private void GamePaused() {
+        PausedGameSnapshot.TransitionTo(SnapshotTransitionTime);
+    }
+
+    private void GameUnpaused() {
+        NormalGameSnapshot.TransitionTo(SnapshotTransitionTime);
     }
 
     private AudioClip GetRandomClipFromArray(AudioClip[] clipArray) {
