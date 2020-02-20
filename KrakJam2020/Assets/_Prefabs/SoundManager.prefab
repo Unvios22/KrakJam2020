@@ -702,13 +702,15 @@ MonoBehaviour:
   concreteSplashingSound: {fileID: 8300000, guid: 5e45be6f8de1ec74f9aa68821b0798b8,
     type: 3}
   holeFilledSound: {fileID: 8300000, guid: 6e58fd43c916fd248950d3ab6169039c, type: 3}
-  unfilledHoleCollisionSound: {fileID: 0}
+  unfilledHoleCollisionSound: {fileID: 8300000, guid: d90268da8f6fff34eb04e55aa9a5761b,
+    type: 3}
   obstacleCollisionSound: {fileID: 8300000, guid: d90268da8f6fff34eb04e55aa9a5761b,
     type: 3}
   carCollisionSound: {fileID: 8300000, guid: 7904fc174a1a628449b89659fec7fb96, type: 3}
-  truckColorChangedSound: {fileID: 0}
-  UiButtonHoverSound: {fileID: 0}
-  UiButtonClickSound: {fileID: 0}
+  truckColorChangedSound: {fileID: 8300000, guid: 6b13abcc9c418d94381716d1a920a242,
+    type: 3}
+  UiButtonHoverSound: {fileID: 8300000, guid: c10561fcd037aaf4c8bbe750ef018502, type: 3}
+  UiButtonClickSound: {fileID: 8300000, guid: f26744468138dbf41b66fd0ad3593a7c, type: 3}
   musicSource: {fileID: 1802797257}
   concreteSoundsSource: {fileID: 3263244311834467814}
   CarAndObstacleCollisionsSource: {fileID: 571008885}

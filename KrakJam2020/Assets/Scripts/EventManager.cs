@@ -16,6 +16,7 @@ public static class EventManager {
 	public static event Action UiButtonClickEvent; 
 	public static event Action GamePausedEvent; 
 	public static event Action GameUnpausedEvent; 
+	public static event Action GameSceneExitedEvent; 
 
 	public static void OnGameStartedEvent() {
 		GameStartedEvent?.Invoke();
@@ -75,5 +76,9 @@ public static class EventManager {
 
 	public static void OnGameUnpausedEvent() {
 		GameUnpausedEvent?.Invoke();
+	}
+
+	public static void OnGameSceneExitedEvent() {
+		GameSceneExitedEvent?.Invoke();
 	}
 }

@@ -31,6 +31,13 @@ public class SoundManager : MonoBehaviour {
 
     private Coroutine _playMusicCoroutine;
 
+    private void Awake() {
+        DontDestroyOnLoad(gameObject);
+        if (FindObjectsOfType(GetType()).Length > 1){
+            Destroy(gameObject);
+        }
+    }
+
     private void Start() {
         SubscribeToEvents();
     }
@@ -50,6 +57,7 @@ public class SoundManager : MonoBehaviour {
         EventManager.UiButtonClickEvent += PlayUiButtonClickSound;
         EventManager.GamePausedEvent += GamePaused;
         EventManager.GameUnpausedEvent += GameUnpaused;
+        EventManager.GameSceneExitedEvent += StopPlayingMusic;
     }
 
     private void PlayMusic() {

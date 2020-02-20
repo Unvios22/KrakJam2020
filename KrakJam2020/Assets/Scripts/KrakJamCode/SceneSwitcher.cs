@@ -10,6 +10,9 @@ public class SceneSwitcher : MonoBehaviour{
 	[SerializeField] private string sceneSwitchTo;
 
 	public void SwitchScene(){
+		if (SceneManager.GetActiveScene().name == "MainGameScene") {
+			EventManager.OnGameSceneExitedEvent();
+		}
 		SceneManager.LoadScene(sceneSwitchTo);
 	}
 
