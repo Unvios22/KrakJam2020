@@ -27,8 +27,4 @@ public class StopScreen : MonoBehaviour{
 		_isPaused = false;
 		EventManager.OnGameUnpausedEvent();
 	}
-
-	public void ExitToMenu(){
-		//todo: go to menu screen
-	}
 }

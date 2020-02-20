@@ -65,6 +65,7 @@ public class SoundManager : MonoBehaviour {
     }
 
     private void StopPlayingMusic() {
+        musicSource.Stop();
         StopCoroutine(_playMusicCoroutine);
     }
 
