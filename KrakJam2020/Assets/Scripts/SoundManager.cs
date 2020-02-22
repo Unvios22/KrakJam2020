@@ -85,6 +85,7 @@ public class SoundManager : MonoBehaviour {
             musicSource.clip = musicToPlay;
             musicSource.Play();
             yield return new WaitForSeconds(clipLength);
+            musicSource.Stop();
         }
     }
 
